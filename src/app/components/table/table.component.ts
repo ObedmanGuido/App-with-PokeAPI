@@ -10,7 +10,7 @@ import { EndpointInfoService } from 'src/app/services/endpoint-info.service';
 })
 export class TableComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'image', 'name'];
+  displayedColumns: string[] = ['position', 'image', 'name', 'types'];
   data: any[] = [];
   dataSource = new MatTableDataSource<any>(this.data);
   pokemons = [];
@@ -30,7 +30,7 @@ export class TableComponent implements OnInit {
           position: i,
           image: res.sprites.front_default,
           name: res.name,
-          types: res.types.map((type: { type: { name: any; }; }) => type.type.name).join(", ")
+          types: res.types.map((type:any) => type.type.name).join(", ")
         };
         this.data.push(pokemonData);
         this.dataSource = new MatTableDataSource<any>(this.data);
