@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { EndpointInfoService } from 'src/app/services/endpoint-info.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class TableComponent implements OnInit {
   pokemons = [];
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
 
-  constructor(private endpointinfoService: EndpointInfoService) { }
+  constructor(private endpointinfoService: EndpointInfoService, private router: Router) { }
 
   ngOnInit(): void {
     this.getPokemons();
@@ -52,6 +53,6 @@ export class TableComponent implements OnInit {
   }
 
   getRow(row: any){
-    console.log(row)
+    this.router.navigateByUrl(`detail/${row.position}`);
   }
 }

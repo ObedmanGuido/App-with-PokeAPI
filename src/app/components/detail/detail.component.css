@@ -1,0 +1,15 @@
+.card{
+    max-width: max-content;
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    background-color: red;
+}
+.mat-card-avatar{
+    background-size: auto;
+}
+.mat-card-header{
+    background-color: gray;
+    padding: 25px;
+    border-radius: 50px;
+}
