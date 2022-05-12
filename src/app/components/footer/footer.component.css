@@ -1,0 +1,8 @@
+footer{
+    display: flex;
+    background-color: honeydew;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+}

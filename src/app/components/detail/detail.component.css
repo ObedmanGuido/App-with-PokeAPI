@@ -7,9 +7,12 @@
 }
 .mat-card-avatar{
     background-size: auto;
+    height: 100px;
+    width: 100px;
 }
 .mat-card-header{
     background-color: gray;
     padding: 25px;
     border-radius: 50px;
+    align-items: center;
 }

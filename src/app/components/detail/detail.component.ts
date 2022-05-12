@@ -9,7 +9,7 @@ import { EndpointInfoService } from 'src/app/services/endpoint-info.service';
 })
 export class DetailComponent implements OnInit {
   pokemon: any = '';
-  pokemonType = [];
+  pokemonType = '';
   pokemonImage = '';
   constructor(private endpointInforService: EndpointInfoService, private activatedRoute: ActivatedRoute) {
     this. activatedRoute.params.subscribe(params =>{
@@ -24,7 +24,7 @@ export class DetailComponent implements OnInit {
     this.endpointInforService.getPokemons(id).subscribe(response => {
       this.pokemon = response;
       this.pokemonImage = this.pokemon.sprites.front_default;
-      this.pokemonType = response.types[0].type.name;
+      this.pokemonType = response.types.map((type:any) => type.type.name).join(" / ")
     }, error =>{
       console.log(error);
     });

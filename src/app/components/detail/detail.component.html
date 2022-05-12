@@ -7,9 +7,9 @@
     <img mat-card-image src="{{pokemonImage}}" alt="{{pokemon.name}}">
     <mat-card-content>
         <mat-chip-list aria-label="Fish selection">
-            <mat-chip color="primary" selected>Type: {{pokemonType}}</mat-chip>
-            <mat-chip color="primary" selected>Height: {{pokemon.height}}</mat-chip>
-            <mat-chip color="primary" selected>Weight: {{pokemon.weight}}</mat-chip>
+            <mat-chip color="primary" selected>Type: {{pokemonType | titlecase}}</mat-chip>
+            <mat-chip color="primary" selected>Height: {{pokemon.height/10}} cm.</mat-chip>
+            <mat-chip color="primary" selected>Weight: {{pokemon.weight/10}} kg.</mat-chip>
         </mat-chip-list>          
     </mat-card-content>
 </mat-card>
